@@ -15,7 +15,7 @@ feats = rbind(ActTrain,ActTest)
 Df = cbind(Df,feats)
 Df = cbind(Df, rbind(read.table("UCI HAR Dataset/train/subject_train.txt", col.names = "Subject"),read.table("UCI HAR Dataset/test/subject_test.txt", col.names = "Subject")))
 
-#rm(feats,ActTrain,ActTest, Test, Train, Labs)
+rm(feats,ActTrain,ActTest, Test, Train, Labs)
 
 
 #2. Extracts only the measurements on the mean and standard deviation for each measurement. 
@@ -29,7 +29,7 @@ Df2 <- Df %>% select(c(colnames(Df)[sort(c(grep("mean()",colnames(Df)), grep("st
 
 activities <- read.table("UCI HAR Dataset/activity_labels.txt", col.names = c("Features", "DescriptiveFeatures"))
 Df3 <- merge(Df2,activities, by = "Features") %>% select(-c("Features"))
-#rm(activities, Df, Df2)
+rm(activities, Df, Df2)
 
 unique(Df3$DescriptiveFeatures)
 
@@ -43,3 +43,4 @@ tidy2 <- dcast(tidy, Subject+Activity ~ MeasurementName)
 
 # write the tidy data set to a file
 write.csv(tidy2, "tidy.csv", row.names=FALSE)
+print ("Succesfully created tidy.csv")
