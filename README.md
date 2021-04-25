@@ -14,6 +14,6 @@ Then run the following command to generate analysis script
 Unix/Macos=> Rscript run_analysis.R
 
 Read: https://github.com/hXalchemy/rproject/blob/main/CodeBook.md to get understanding of data
-Generated Data: https://github.com/hXalchemy/rproject/blob/main/tidy.csv
+</br>Generated Data: https://github.com/hXalchemy/rproject/blob/main/tidy.csv
 
 
