@@ -42,5 +42,5 @@ tidy <- PivotDF %>% group_by(Subject,Activity,MeasurementName) %>% summarise(Ave
 tidy2 <- dcast(tidy, Subject+Activity ~ MeasurementName)
 
 # write the tidy data set to a file
-write.csv(tidy2, "tidy.csv", row.names=FALSE)
+write.table(tidy2, "tidy.txt", row.names=FALSE)
 print ("Succesfully created tidy.csv")
